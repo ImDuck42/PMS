@@ -1,0 +1,190 @@
+:root {
+    --background-color: #0d1117;
+    --background-settings-color: #161b22;
+    --primary-color: #58a6ff;
+    --accent-color: #9b59b6;  /* Purple accent */
+    --grid-line-color: #30363d;
+    --text-color: #c9d1d9;
+    --label-font-size: 1rem;
+    --button-font-size: 1.1rem;
+    --input-font-size: 1rem;
+    --input-background: #21262d;
+    --input-border-color: var(--grid-line-color);
+    --button-background: var(--accent-color);
+    --button-hover-background: #8e44ad;  /* Darker purple on hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.controls {
+    background: var(--background-settings-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.sidebyside {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+
+.settings label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: var(--label-font-size);
+}
+
+input, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background: var(--input-background);
+    border: 1px solid var(--input-border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-size: var(--input-font-size);
+}
+
+button {
+    background: var(--button-background);
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: var(--button-font-size);
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--button-hover-background);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#export, #importBtn {
+    width: 48px;
+    height: 39px;
+    cursor: pointer;
+}
+
+#export img, #importBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.display {
+    position: relative;
+}
+
+canvas {
+    background: var(--background-color);
+    border: 2px solid var(--grid-line-color);
+    width: 100%;
+    height: 500px;
+    display: block;
+    border-radius: 5px;
+}
+
+.formulas {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--background-settings-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.formulas h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.horizontal, .vertical, .equation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.copy-btn {
+    background: var(--accent-color);
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+}
+
+button.copy-btn:hover {
+    background: var(--button-hover-background);
+}
+
+button.copy-btn img {
+    width: 100%;
+    height: 100%;
+}

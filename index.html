@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A projectile motion simulator where you can simulate the trajectory of a projectile under different conditions.">
+        <title>Projectile Motion Simulator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div class="container">
+        <header><h1>Projectile Motion Simulator</h1></header>
+        <main>
+            <section class="controls">
+                <h2>Settings</h2>
+                <div class="settings">
+                    <label for="angle">Angle (°): <input type="number" id="angle" min="0" max="90" step="0.1"></label>
+                    <label for="speed">Initial Speed (m/s): <input type="number" id="speed" min="0" step="0.1"></label>
+                    <section class="sidebyside">
+                        <label for="height">Initial Height (m): <input type="number" id="height" min="0" step="0.1"></label>
+                        <label for="xoffset">X Offset (m): <input type="number" id="xoffset" min="0" step="0.1"></label>
+                    </section>
+                    <label for="wind">Wind Speed (m/s): <input type="number" id="wind" min="0" step="0.1"></label>
+                    <label for="gravity">Gravity (m/s²): <input type="number" id="gravity" min="0" step="0.1"></label>
+                    <label for="interval">Time Step (s): <input type="number" id="interval" min="0.01" step="0.01"></label>
+                </div>
+                <div class="options">
+                    <button id="simulate" title="Start Simulation">Simulate</button>
+                    <button id="export" title="Export Current Settings"><img src="./assets/export.png" alt="export"></button>
+                    <input type="file" id="import" accept=".pms" class="hidden">
+                    <button id="importBtn" aria-label="Import simulation settings" title="Import Settings from .pms"><img src="./assets/import.png" alt="import"></button>
+                </div>
+            </section>
+            <section class="display">
+                <canvas id="canvas"></canvas>
+                <div class="formulas">
+                    <h2>Physics Formulas</h2>
+                    <div class="horizontal">
+                        <p id="horizontal">Horizontal Position: x(t) = vₓ * t</p>
+                        <button class="copy-btn" data-target="horizontal" title="Copy horizontal formula"><img src="./assets/copy.png" alt="Copy"></button>
+                    </div>
+                    <div class="vertical">
+                        <p id="vertical">Vertical Position: y(t) = y₀ + vᵧ * t - 0.5 * g * t²</p>
+                        <button class="copy-btn" data-target="vertical" title="Copy vertical formula"><img src="./assets/copy.png" alt="Copy"></button>
+                    </div>
+                    <div class="equation">
+                        <p id="equation">Parabola Equation: y(x) = ax² + bx + c</p>
+                        <button class="copy-btn" data-target="equation" title="Copy parabola equation"><img src="./assets/copy.png" alt="Copy"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
